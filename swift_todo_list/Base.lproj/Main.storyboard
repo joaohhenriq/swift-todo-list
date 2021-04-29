@@ -39,10 +39,57 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="tbT-zN-YO7" kind="show" identifier="goToCompleteTodo" id="NvN-af-qdz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJr-2K-EXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131" y="25"/>
+        </scene>
+        <!--Complete View Controller-->
+        <scene sceneID="PKg-ee-4Wm">
+            <objects>
+                <viewController id="tbT-zN-YO7" customClass="CompleteViewController" customModule="swift_todo_list" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wob-OW-f8x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwl-2O-lUD">
+                                <rect key="frame" x="20" y="143" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIa-SM-Jt1">
+                                <rect key="frame" x="160.5" y="245" width="93" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeTodo:" destination="tbT-zN-YO7" eventType="touchUpInside" id="y4Z-ZA-Brf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oSF-tC-abP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pwl-2O-lUD" firstAttribute="centerX" secondItem="wob-OW-f8x" secondAttribute="centerX" id="BRS-hY-kLV"/>
+                            <constraint firstItem="AIa-SM-Jt1" firstAttribute="centerX" secondItem="wob-OW-f8x" secondAttribute="centerX" id="FFQ-98-0m1"/>
+                            <constraint firstItem="AIa-SM-Jt1" firstAttribute="top" secondItem="pwl-2O-lUD" secondAttribute="bottom" constant="61" id="GLv-ja-8yB"/>
+                            <constraint firstItem="pwl-2O-lUD" firstAttribute="top" secondItem="oSF-tC-abP" secondAttribute="top" constant="55" id="NXt-BC-X2o"/>
+                            <constraint firstItem="pwl-2O-lUD" firstAttribute="centerX" secondItem="wob-OW-f8x" secondAttribute="centerX" id="SPj-Dx-7Wa"/>
+                            <constraint firstItem="AIa-SM-Jt1" firstAttribute="centerX" secondItem="wob-OW-f8x" secondAttribute="centerX" id="dAj-RJ-N60"/>
+                            <constraint firstItem="pwl-2O-lUD" firstAttribute="leading" secondItem="oSF-tC-abP" secondAttribute="leading" constant="20" id="faJ-Os-ZTc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Ow-wU-tjd"/>
+                    <connections>
+                        <outlet property="todoLabel" destination="pwl-2O-lUD" id="y0J-dG-eWJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FBh-nC-hZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="712.5"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="dyp-Co-Zbf">
@@ -58,10 +105,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSc-FF-ldX">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Walk the dog" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSc-FF-ldX">
                                 <rect key="frame" x="82" y="161" width="250" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dPE-e0-FFG"/>
+                                    <constraint firstAttribute="width" constant="250" id="dPE-e0-FFG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
