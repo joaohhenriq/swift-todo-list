@@ -15,6 +15,7 @@
 		EE7097C9263A18F700A1E1F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7097C7263A18F700A1E1F8 /* LaunchScreen.storyboard */; };
 		EE7097D3263A1BD100A1E1F8 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7097D2263A1BD100A1E1F8 /* TodoModel.swift */; };
 		EE7097D6263A1C4F00A1E1F8 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7097D5263A1C4F00A1E1F8 /* TodoTableViewController.swift */; };
+		EE7097DC263A2C6400A1E1F8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7097DB263A2C6400A1E1F8 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EE7097CA263A18F700A1E1F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE7097D2263A1BD100A1E1F8 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		EE7097D5263A1C4F00A1E1F8 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
+		EE7097DB263A2C6400A1E1F8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,9 @@
 			children = (
 				EE7097B9263A18F500A1E1F8 /* AppDelegate.swift */,
 				EE7097BB263A18F500A1E1F8 /* SceneDelegate.swift */,
-				EE7097D5263A1C4F00A1E1F8 /* TodoTableViewController.swift */,
 				EE7097D2263A1BD100A1E1F8 /* TodoModel.swift */,
+				EE7097D5263A1C4F00A1E1F8 /* TodoTableViewController.swift */,
+				EE7097DB263A2C6400A1E1F8 /* AddViewController.swift */,
 				EE7097BF263A18F500A1E1F8 /* Main.storyboard */,
 				EE7097C5263A18F700A1E1F8 /* Assets.xcassets */,
 				EE7097C7263A18F700A1E1F8 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			files = (
 				EE7097C4263A18F500A1E1F8 /* swift_todo_list.xcdatamodeld in Sources */,
 				EE7097D6263A1C4F00A1E1F8 /* TodoTableViewController.swift in Sources */,
+				EE7097DC263A2C6400A1E1F8 /* AddViewController.swift in Sources */,
 				EE7097D3263A1BD100A1E1F8 /* TodoModel.swift in Sources */,
 				EE7097BA263A18F500A1E1F8 /* AppDelegate.swift in Sources */,
 				EE7097BC263A18F500A1E1F8 /* SceneDelegate.swift in Sources */,

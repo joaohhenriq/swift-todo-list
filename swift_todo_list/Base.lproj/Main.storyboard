@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,11 +31,83 @@
                             <outlet property="delegate" destination="SKk-1O-fxj" id="dZM-cW-ekD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todo List" id="Bl8-gQ-KBZ"/>
+                    <navigationItem key="navigationItem" title="Todo List" id="Bl8-gQ-KBZ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="zOL-IE-cEW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="K46-32-8cN">
+                            <connections>
+                                <segue destination="aVI-8r-Va8" kind="show" id="sln-CE-Eat"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJr-2K-EXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131" y="25"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="dyp-Co-Zbf">
+            <objects>
+                <viewController id="aVI-8r-Va8" customClass="AddViewController" customModule="swift_todo_list" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4oW-SC-W49">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4B-28-Kev">
+                                <rect key="frame" x="175.5" y="125" width="63" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSc-FF-ldX">
+                                <rect key="frame" x="82" y="161" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dPE-e0-FFG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-Lr-4Pg">
+                                <rect key="frame" x="183" y="263" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3H-8w-2lY">
+                                <rect key="frame" x="164" y="231" width="86" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-CV-U6I">
+                                <rect key="frame" x="182" y="355" width="50" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addFunction:" destination="aVI-8r-Va8" eventType="touchUpInside" id="ikt-WS-1tA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BoF-44-AIs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q7h-CV-U6I" firstAttribute="centerX" secondItem="4oW-SC-W49" secondAttribute="centerX" id="51X-wW-uXH"/>
+                            <constraint firstItem="MSc-FF-ldX" firstAttribute="centerX" secondItem="4oW-SC-W49" secondAttribute="centerX" id="H08-k7-iAU"/>
+                            <constraint firstItem="Lfr-Lr-4Pg" firstAttribute="top" secondItem="g3H-8w-2lY" secondAttribute="bottom" constant="33" id="W1Z-J9-gGU"/>
+                            <constraint firstItem="Q7h-CV-U6I" firstAttribute="top" secondItem="Lfr-Lr-4Pg" secondAttribute="bottom" constant="36" id="cBH-av-wKf"/>
+                            <constraint firstItem="MSc-FF-ldX" firstAttribute="top" secondItem="U4B-28-Kev" secondAttribute="bottom" constant="8" symbolic="YES" id="eDp-T6-kSO"/>
+                            <constraint firstItem="g3H-8w-2lY" firstAttribute="top" secondItem="MSc-FF-ldX" secondAttribute="bottom" constant="36" id="hBx-j7-mx1"/>
+                            <constraint firstItem="g3H-8w-2lY" firstAttribute="centerX" secondItem="4oW-SC-W49" secondAttribute="centerX" id="inC-uh-bKJ"/>
+                            <constraint firstItem="U4B-28-Kev" firstAttribute="top" secondItem="BoF-44-AIs" secondAttribute="top" constant="37" id="is8-wR-AAM"/>
+                            <constraint firstItem="U4B-28-Kev" firstAttribute="centerX" secondItem="4oW-SC-W49" secondAttribute="centerX" id="m0O-mz-NS6"/>
+                            <constraint firstItem="Lfr-Lr-4Pg" firstAttribute="centerX" secondItem="4oW-SC-W49" secondAttribute="centerX" id="nke-IR-pBY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZNC-Nm-TCR"/>
+                    <connections>
+                        <outlet property="importantSwitch" destination="Lfr-Lr-4Pg" id="WNm-PY-DGG"/>
+                        <outlet property="todoNameTxt" destination="MSc-FF-ldX" id="ee4-3N-9y3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWz-TR-9Aj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NnU-sh-iGc">
